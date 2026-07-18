@@ -1,6 +1,6 @@
 # Ontología EDINT de Sensores Medioambientales, caso Climatología (EDINT Environmental Sensors Ontology)
 
-Este repositorio contienen ejemplos de uso concretos de la ontología de Sensores Medioambientales para el caso de magnitudes climatolológicas.
+Este repositorio contiene ejemplos de uso concretos de la ontología de Sensores Medioambientales para el caso de magnitudes climatolológicas.
 
 Ver también: [Ontología EDINT de Sensores Medioambientales](https://github.com/oeg-upm/edint-ontologia-medio-ambiente)
 
