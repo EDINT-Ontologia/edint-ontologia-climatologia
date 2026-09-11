@@ -1,0 +1,1373 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix sosa: <http://www.w3.org/ns/sosa/>.
+@prefix qudt: <http://qudt.org/schema/qudt/>.
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix gsp: <http://www.opengis.net/ont/geosparql#>.
+@prefix schema: <http://schema.org/>.
+@prefix edintmed: <https://edint.es/def/medioambiente#>.
+@prefix edintkos-vars: <https://edint.es/kos/edint/variables/>.
+@prefix edintkos-foi: <https://edint.es/kos/edint/foi/>.
+@prefix edintkos-sensortypes: <https://edint.es/kos/edint/sensortypes/>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix formats: <http://www.w3.org/ns/formats/>.
+@prefix comp: <http://semweb.mmlab.be/ns/rml-compression#>.
+@prefix void: <http://rdfs.org/ns/void#>.
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#>.
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#>.
+@base <http://example.com/ns#>.
+
+
+<weather_station_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/estacionDeMedida/{refDevice}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintmed:SensorPlatform;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dct:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "refDevice";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "Estacion meteorologica - {refDevice}";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hosts;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/sensor/{refDevice}/meteorologia";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant gsp:hasGeometry;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/geometria/{refDevice}";
+			rr:termType rr:IRI
+		];
+	].
+
+
+<station_geometry_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/geometria/{refDevice}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant gsp:Geometry;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant gsp:asGeoJSON;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "location";
+			rr:datatype gsp:geoJSONLiteral
+		];
+	].
+
+
+<weather_sensor_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/sensor/{refDevice}/meteorologia";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintmed:EnvironmentalSensor;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "Sensor meteorologico - {refDevice}";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:isHostedBy;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/estacionDeMedida/{refDevice}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintmed:hasSensorType;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-sensortypes:ClimaticSensor;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dct:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "{refDevice}-meteorologia";
+			rr:termType rr:Literal
+		];
+	].
+
+
+<phenomenon_instant_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/eventoFenomeno/meteorologia/{_id}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant time:Instant;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant time:inXSDDateTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "recvTime";
+			rr:datatype xsd:dateTime
+		];
+	].
+
+
+<observation_UV_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/observacion/meteorologia/{_id}/UV";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintmed:EnvironmentalObservation;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "Medicion de indice UV en {recvTime}";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:madeBySensor;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/sensor/{refDevice}/meteorologia";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:observedProperty;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-vars:UVIndex;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasFeatureOfInterest;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-foi:SolarRadiation;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:resultTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "recvTime";
+			rr:datatype xsd:dateTime
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasResult;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/UV";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:phenomenonTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/eventoFenomeno/meteorologia/{_id}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dct:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "{entityId}-{_id}-UV";
+			rr:termType rr:Literal
+		];
+	].
+
+
+<result_UV_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/UV";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant qudt:QuantityValue;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant qudt:value;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "UV";
+		];
+	].
+
+
+<observation_atmosphericPressure_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/observacion/meteorologia/{_id}/atmosphericPressure";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintmed:EnvironmentalObservation;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "Medicion de presion atmosferica en {recvTime}";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:madeBySensor;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/sensor/{refDevice}/meteorologia";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:observedProperty;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-vars:AtmosphericPressure;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasFeatureOfInterest;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-foi:Air;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:resultTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "recvTime";
+			rr:datatype xsd:dateTime
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasResult;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/atmosphericPressure";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:phenomenonTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/eventoFenomeno/meteorologia/{_id}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dct:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "{entityId}-{_id}-atmosphericPressure";
+			rr:termType rr:Literal
+		];
+	].
+
+
+<result_atmosphericPressure_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/atmosphericPressure";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant qudt:QuantityValue;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant qudt:value;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "atmosphericPressure";
+		];
+	].
+
+
+<observation_precipitation_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/observacion/meteorologia/{_id}/precipitation";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintmed:EnvironmentalObservation;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "Medicion de precipitacion en {recvTime}";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:madeBySensor;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/sensor/{refDevice}/meteorologia";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:observedProperty;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-vars:PrecipitationAmount;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasFeatureOfInterest;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-foi:Precipitation;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:resultTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "{recvTime}Z";
+			rr:datatype xsd:dateTime
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasResult;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/precipitation";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:phenomenonTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/eventoFenomeno/meteorologia/{_id}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dct:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "{entityId}-{_id}-precipitation";
+			rr:termType rr:Literal
+		];
+	].
+
+
+<result_precipitation_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/precipitation";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant qudt:QuantityValue;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant qudt:value;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "precipitation";
+		];
+	].
+
+
+<observation_relativeHumidity_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/observacion/meteorologia/{_id}/relativeHumidity";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintmed:EnvironmentalObservation;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "Medicion de humedad relativa en {recvTime}";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:madeBySensor;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/sensor/{refDevice}/meteorologia";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:observedProperty;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-vars:RelativeHumidity;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasFeatureOfInterest;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-foi:Air;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:resultTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "recvTime";
+			rr:datatype xsd:dateTime
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasResult;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/relativeHumidity";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:phenomenonTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/eventoFenomeno/meteorologia/{_id}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dct:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "{entityId}-{_id}-relativeHumidity";
+			rr:termType rr:Literal
+		];
+	].
+
+
+<result_relativeHumidity_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/relativeHumidity";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant qudt:QuantityValue;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant qudt:value;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "relativeHumidity";
+		];
+	].
+
+
+<observation_solarRadiation_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/observacion/meteorologia/{_id}/solarRadiation";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintmed:EnvironmentalObservation;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "Medicion de radiacion solar en {recvTime}";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:madeBySensor;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/sensor/{refDevice}/meteorologia";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:observedProperty;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-vars:SolarIrradiance;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasFeatureOfInterest;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-foi:SolarRadiation;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:resultTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "recvTime";
+			rr:datatype xsd:dateTime
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasResult;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/solarRadiation";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:phenomenonTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/eventoFenomeno/meteorologia/{_id}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dct:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "{entityId}-{_id}-solarRadiation";
+			rr:termType rr:Literal
+		];
+	].
+
+
+<result_solarRadiation_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/solarRadiation";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant qudt:QuantityValue;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant qudt:value;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "solarRadiation";
+		];
+	].
+
+
+<observation_temperature_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/observacion/meteorologia/{_id}/temperature";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintmed:EnvironmentalObservation;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "Medicion de temperatura del aire en {recvTime}";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:madeBySensor;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/sensor/{refDevice}/meteorologia";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:observedProperty;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-vars:AirTemperature;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasFeatureOfInterest;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-foi:Air;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:resultTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "recvTime";
+			rr:datatype xsd:dateTime
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasResult;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/temperature";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:phenomenonTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/eventoFenomeno/meteorologia/{_id}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dct:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "{entityId}-{_id}-temperature";
+			rr:termType rr:Literal
+		];
+	].
+
+
+<result_temperature_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/temperature";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant qudt:QuantityValue;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant qudt:value;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "temperature";
+		];
+	].
+
+
+<observation_windDirection_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/observacion/meteorologia/{_id}/windDirection";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintmed:EnvironmentalObservation;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "Medicion de direccion del viento en {recvTime}";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:madeBySensor;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/sensor/{refDevice}/meteorologia";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:observedProperty;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-vars:WindDirection;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasFeatureOfInterest;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-foi:Wind;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:resultTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "recvTime";
+			rr:datatype xsd:dateTime
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasResult;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/windDirection";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:phenomenonTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/eventoFenomeno/meteorologia/{_id}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dct:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "{entityId}-{_id}-windDirection";
+			rr:termType rr:Literal
+		];
+	].
+
+
+<result_windDirection_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/windDirection";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant qudt:QuantityValue;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant qudt:value;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "windDirection";
+		];
+	].
+
+
+<observation_windSpeed_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/observacion/meteorologia/{_id}/windSpeed";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintmed:EnvironmentalObservation;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "Medicion de velocidad del viento en {recvTime}";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:madeBySensor;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/sensor/{refDevice}/meteorologia";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:observedProperty;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-vars:WindSpeed;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasFeatureOfInterest;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintkos-foi:Wind;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:resultTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "recvTime";
+			rr:datatype xsd:dateTime
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:hasResult;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/windSpeed";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant sosa:phenomenonTime;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "https://example.org/recurso/eventoFenomeno/meteorologia/{_id}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dct:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "{entityId}-{_id}-windSpeed";
+			rr:termType rr:Literal
+		];
+	].
+
+
+<result_windSpeed_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "climatologia_normalizado.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "https://example.org/recurso/resultadoObservacion/meteorologia/{_id}/windSpeed";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant qudt:QuantityValue;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant qudt:value;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "windSpeed";
+		];
+	].
+
+

@@ -1,0 +1,258 @@
+prefixes:
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  dct: http://purl.org/dc/terms/
+  sosa: http://www.w3.org/ns/sosa/
+  qudt: http://qudt.org/schema/qudt/
+  unit: http://qudt.org/vocab/unit/
+  time: http://www.w3.org/2006/time#
+  gsp: http://www.opengis.net/ont/geosparql#
+  schema: http://schema.org/
+  edintmed: https://edint.es/def/medioambiente#
+  edintkos-vars: https://edint.es/kos/edint/variables/
+  edintkos-foi: https://edint.es/kos/edint/foi/
+  edintkos-sensortypes: https://edint.es/kos/edint/sensortypes/
+sources:
+  data-source: ['climatologia_normalizado.csv~csv']
+
+mappings:
+  weather_station:
+    sources:
+      - data-source
+    s: https://example.org/recurso/estacionDeMedida/$(refDevice)
+    po:
+      - [a, edintmed:SensorPlatform]
+      - [dct:identifier, "$(refDevice)"]
+      - [rdfs:label, "Estacion meteorologica - $(refDevice)"]
+      - [sosa:hosts, "https://example.org/recurso/sensor/$(refDevice)/meteorologia~iri"]
+      - [gsp:hasGeometry, "https://example.org/recurso/geometria/$(refDevice)~iri"]
+
+  station_geometry:
+    sources:
+      - data-source
+    s: https://example.org/recurso/geometria/$(refDevice)
+    po:
+      - [a, gsp:Geometry]
+      - [gsp:asGeoJSON, "$(location)", gsp:geoJSONLiteral]
+
+  weather_sensor:
+    sources:
+      - data-source
+    s: https://example.org/recurso/sensor/$(refDevice)/meteorologia
+    po:
+      - [a, edintmed:EnvironmentalSensor]
+      - [rdfs:label, "Sensor meteorologico - $(refDevice)"]
+      - [sosa:isHostedBy, "https://example.org/recurso/estacionDeMedida/$(refDevice)~iri"]
+      - [edintmed:hasSensorType, edintkos-sensortypes:ClimaticSensor] # SKOS
+      - p: dct:identifier
+        o:
+          value:  "$(refDevice)-meteorologia"
+          type: literal
+
+  phenomenon_instant:
+    sources:
+      - data-source
+    s: https://example.org/recurso/eventoFenomeno/meteorologia/$(_id)
+    po:
+      - [a, time:Instant]
+      - [time:inXSDDateTime, "$(recvTime)", xsd:dateTime]
+
+  observation_UV:
+    sources:
+      - data-source
+    s: https://example.org/recurso/observacion/meteorologia/$(_id)/UV
+    po:
+      - [a, edintmed:EnvironmentalObservation]
+      - [rdfs:label, "Medicion de indice UV en $(recvTime)"]
+      - [sosa:madeBySensor, "https://example.org/recurso/sensor/$(refDevice)/meteorologia~iri"]
+      - [sosa:observedProperty, edintkos-vars:UVIndex]
+      - [sosa:hasFeatureOfInterest, edintkos-foi:SolarRadiation]
+      - [sosa:resultTime, "$(recvTime)", xsd:dateTime]
+      - [sosa:hasResult, "https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/UV~iri"]
+      - [sosa:phenomenonTime, "https://example.org/recurso/eventoFenomeno/meteorologia/$(_id)~iri"]
+      - p: dct:identifier
+        o:
+          value:  "$(entityId)-$(_id)-UV"
+          type: literal
+  result_UV:
+    sources:
+      - data-source
+    s: https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/UV
+    po:
+      - [a, qudt:QuantityValue]
+      - [qudt:value, $(UV)]
+#      - [qudt:unit, unit:UNITLESS] No se ha definido la unidad
+
+  observation_atmosphericPressure:
+    sources:
+      - data-source
+    s: https://example.org/recurso/observacion/meteorologia/$(_id)/atmosphericPressure
+    po:
+      - [a, edintmed:EnvironmentalObservation]
+      - [rdfs:label, "Medicion de presion atmosferica en $(recvTime)"]
+      - [sosa:madeBySensor, "https://example.org/recurso/sensor/$(refDevice)/meteorologia~iri"]
+      - [sosa:observedProperty, edintkos-vars:AtmosphericPressure]
+      - [sosa:hasFeatureOfInterest, edintkos-foi:Air]
+      - [sosa:resultTime, "$(recvTime)", xsd:dateTime]
+      - [sosa:hasResult, "https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/atmosphericPressure~iri"]
+      - [sosa:phenomenonTime, "https://example.org/recurso/eventoFenomeno/meteorologia/$(_id)~iri"]
+      - p: dct:identifier
+        o:
+          value:  "$(entityId)-$(_id)-atmosphericPressure"
+          type: literal
+
+  result_atmosphericPressure:
+    sources:
+      - data-source
+    s: https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/atmosphericPressure
+    po:
+      - [a, qudt:QuantityValue]
+      - [qudt:value, $(atmosphericPressure)]
+#      - [qudt:unit, unit:HectoPA]
+  observation_precipitation:
+    sources:
+      - data-source
+    s: https://example.org/recurso/observacion/meteorologia/$(_id)/precipitation
+    po:
+      - [a, edintmed:EnvironmentalObservation]
+      - [rdfs:label, "Medicion de precipitacion en $(recvTime)"]
+      - [sosa:madeBySensor, "https://example.org/recurso/sensor/$(refDevice)/meteorologia~iri"]
+      - [sosa:observedProperty, edintkos-vars:PrecipitationAmount]
+      - [sosa:hasFeatureOfInterest, edintkos-foi:Precipitation]
+      - [sosa:resultTime, "$(recvTime)Z", xsd:dateTime]
+      - [sosa:hasResult, "https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/precipitation~iri"]
+      - [sosa:phenomenonTime, "https://example.org/recurso/eventoFenomeno/meteorologia/$(_id)~iri"]
+      - p: dct:identifier
+        o:
+          value:   "$(entityId)-$(_id)-precipitation"
+          type: literal
+
+  result_precipitation:
+    sources:
+      - data-source
+    s: https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/precipitation
+    po:
+      - [a, qudt:QuantityValue]
+      - [qudt:value, $(precipitation)]
+#      - [qudt:unit, unit:MilliM]
+
+  observation_relativeHumidity:
+    sources:
+      - data-source
+    s: https://example.org/recurso/observacion/meteorologia/$(_id)/relativeHumidity
+    po:
+      - [a, edintmed:EnvironmentalObservation]
+      - [rdfs:label, "Medicion de humedad relativa en $(recvTime)"]
+      - [sosa:madeBySensor, "https://example.org/recurso/sensor/$(refDevice)/meteorologia~iri"]
+      - [sosa:observedProperty, edintkos-vars:RelativeHumidity]
+      - [sosa:hasFeatureOfInterest, edintkos-foi:Air]
+      - [sosa:resultTime, "$(recvTime)", xsd:dateTime]
+      - [sosa:hasResult, "https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/relativeHumidity~iri"]
+      - [sosa:phenomenonTime, "https://example.org/recurso/eventoFenomeno/meteorologia/$(_id)~iri"]
+      - p: dct:identifier
+        o:
+          value:  "$(entityId)-$(_id)-relativeHumidity"
+          type: literal
+  result_relativeHumidity:
+    sources:
+      - data-source
+    s: https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/relativeHumidity
+    po:
+      - [a, qudt:QuantityValue]
+      - [qudt:value, $(relativeHumidity)]
+#      - [qudt:unit, unit:PERCENT]
+  observation_solarRadiation:
+    sources: [data-source]
+    s: https://example.org/recurso/observacion/meteorologia/$(_id)/solarRadiation
+    po:
+      - [a, edintmed:EnvironmentalObservation]
+      - [rdfs:label, "Medicion de radiacion solar en $(recvTime)"]
+      - [sosa:madeBySensor, "https://example.org/recurso/sensor/$(refDevice)/meteorologia~iri"]
+      - [sosa:observedProperty, edintkos-vars:SolarIrradiance]
+      - [sosa:hasFeatureOfInterest, edintkos-foi:SolarRadiation]
+      - [sosa:resultTime, "$(recvTime)", xsd:dateTime]
+      - [sosa:hasResult, "https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/solarRadiation~iri"]
+      - [sosa:phenomenonTime, "https://example.org/recurso/eventoFenomeno/meteorologia/$(_id)~iri"]
+      - p: dct:identifier
+        o:
+          value: "$(entityId)-$(_id)-solarRadiation"
+          type: literal
+  result_solarRadiation:
+    sources: [data-source]
+    s: https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/solarRadiation
+    po:
+      - [a, qudt:QuantityValue]
+      - [qudt:value, $(solarRadiation)]
+#      - [qudt:unit, unit:W-PER-M2]
+  observation_temperature:
+    sources: [data-source]
+    s: https://example.org/recurso/observacion/meteorologia/$(_id)/temperature
+    po:
+      - [a, edintmed:EnvironmentalObservation]
+      - [rdfs:label, "Medicion de temperatura del aire en $(recvTime)"]
+      - [sosa:madeBySensor, "https://example.org/recurso/sensor/$(refDevice)/meteorologia~iri"]
+      - [sosa:observedProperty, edintkos-vars:AirTemperature]
+      - [sosa:hasFeatureOfInterest, edintkos-foi:Air]
+      - [sosa:resultTime, "$(recvTime)", xsd:dateTime]
+      - [sosa:hasResult, "https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/temperature~iri"]
+      - [sosa:phenomenonTime, "https://example.org/recurso/eventoFenomeno/meteorologia/$(_id)~iri"]
+      - p: dct:identifier
+        o:
+          value: "$(entityId)-$(_id)-temperature"
+          type: literal
+
+  result_temperature:
+    sources: [data-source]
+    s: https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/temperature
+    po:
+      - [a, qudt:QuantityValue]
+      - [qudt:value, $(temperature)]
+#      - [qudt:unit, unit:DEG_C]
+  observation_windDirection:
+    sources: [data-source]
+    s: https://example.org/recurso/observacion/meteorologia/$(_id)/windDirection
+    po:
+      - [a, edintmed:EnvironmentalObservation]
+      - [rdfs:label, "Medicion de direccion del viento en $(recvTime)"]
+      - [sosa:madeBySensor, "https://example.org/recurso/sensor/$(refDevice)/meteorologia~iri"]
+      - [sosa:observedProperty, edintkos-vars:WindDirection]
+      - [sosa:hasFeatureOfInterest, edintkos-foi:Wind]
+      - [sosa:resultTime, "$(recvTime)", xsd:dateTime]
+      - [sosa:hasResult, "https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/windDirection~iri"]
+      - [sosa:phenomenonTime, "https://example.org/recurso/eventoFenomeno/meteorologia/$(_id)~iri"]
+      - p: dct:identifier
+        o:
+          value: "$(entityId)-$(_id)-windDirection"
+          type: literal
+  result_windDirection:
+    sources: [data-source]
+    s: https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/windDirection
+    po:
+      - [a, qudt:QuantityValue]
+      - [qudt:value, $(windDirection)]
+#      - [qudt:unit, unit:DEG]
+
+  observation_windSpeed:
+    sources: [data-source]
+    s: https://example.org/recurso/observacion/meteorologia/$(_id)/windSpeed
+    po:
+      - [a, edintmed:EnvironmentalObservation]
+      - [rdfs:label, "Medicion de velocidad del viento en $(recvTime)"]
+      - [sosa:madeBySensor, "https://example.org/recurso/sensor/$(refDevice)/meteorologia~iri"]
+      - [sosa:observedProperty, edintkos-vars:WindSpeed]
+      - [sosa:hasFeatureOfInterest, edintkos-foi:Wind]
+      - [sosa:resultTime, "$(recvTime)", xsd:dateTime]
+      - [sosa:hasResult, "https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/windSpeed~iri"]
+      - [sosa:phenomenonTime, "https://example.org/recurso/eventoFenomeno/meteorologia/$(_id)~iri"]
+      - p: dct:identifier
+        o:
+          value: "$(entityId)-$(_id)-windSpeed"
+          type: literal
+  result_windSpeed:
+    sources: [data-source]
+    s: https://example.org/recurso/resultadoObservacion/meteorologia/$(_id)/windSpeed
+    po:
+      - [a, qudt:QuantityValue]
+      - [qudt:value, $(windSpeed)]
+#      - [qudt:unit, unit:KiloM-PER-HR]
+
