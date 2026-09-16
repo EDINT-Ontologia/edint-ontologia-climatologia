@@ -8,7 +8,7 @@ prefixes:
   time: http://www.w3.org/2006/time#
   gsp: http://www.opengis.net/ont/geosparql#
   schema: http://schema.org/
-  edintmed: http://vocab.linkeddata.es/datosabiertos/def/medioambiente/
+  edintmed: https://edint.es/def/medio-ambiente#
   edintkos-vars: http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/
   edintkos-foi: http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/
   edintkos-sensortypes: http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/

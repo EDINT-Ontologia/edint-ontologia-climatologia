@@ -7,7 +7,7 @@
 @prefix time: <http://www.w3.org/2006/time#>.
 @prefix gsp: <http://www.opengis.net/ont/geosparql#>.
 @prefix schema: <http://schema.org/>.
-@prefix edintmed: <https://edint.es/def/medioambiente#>.
+@prefix edintmed: <https://edint.es/def/medio-ambiente#>.
 @prefix edintkos-vars: <https://edint.es/kos/edint/variables/>.
 @prefix edintkos-foi: <https://edint.es/kos/edint/foi/>.
 @prefix edintkos-sensortypes: <https://edint.es/kos/edint/sensortypes/>.
