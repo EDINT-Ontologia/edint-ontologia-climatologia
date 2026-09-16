@@ -15,9 +15,9 @@
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 @prefix edintmed: <https://edint.es/def/medio-ambiente#> .
-@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
-@prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
-@prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/> .
+@prefix edintkos-vars: <https://edint.es/kos/EnvironmentalProperty/> .
+@prefix edintkos-foi: <https://edint.es/kos/FeaturesOfInterest/> .
+@prefix edintkos-sensortypes: <https://edint.es/kos/SensorTypes/> .
 
 map:map_meteorological_observation_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
@@ -107,7 +107,7 @@ map:om_010 rdf:type rr:ObjectMap ;
 	rr:termType rr:IRI .
 
 map:om_011 rdf:type rr:ObjectMap ;
-	rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/{OBS_PROPERTY}" ;
+	rr:template "https://edint.es/kos/EnvironmentalProperty/{OBS_PROPERTY}" ;
 	rr:termType rr:IRI .
 
 map:om_012 rdf:type rr:ObjectMap ;
@@ -115,7 +115,7 @@ map:om_012 rdf:type rr:ObjectMap ;
 	rr:termType rr:IRI .
 
 map:om_013 rdf:type rr:ObjectMap ;
-	rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/{SENSOR_TYPE}" ;
+	rr:template "https://edint.es/kos/SensorTypes/{SENSOR_TYPE}" ;
 	rr:termType rr:IRI .
 
 map:om_014 rdf:type rr:ObjectMap ;
@@ -143,11 +143,11 @@ map:om_019 rdf:type rr:ObjectMap ;
 	rr:termType rr:IRI .
 
 map:om_020 rdf:type rr:ObjectMap ;
-	rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/{OBS_PROPERTY}" ;
+	rr:template "https://edint.es/kos/EnvironmentalProperty/{OBS_PROPERTY}" ;
 	rr:termType rr:IRI .
 
 map:om_021 rdf:type rr:ObjectMap ;
-	rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/{FOI}" ;
+	rr:template "https://edint.es/kos/FeaturesOfInterest/{FOI}" ;
 	rr:termType rr:IRI .
 
 map:om_022 rml:reference "RESULT_TIME" ;
