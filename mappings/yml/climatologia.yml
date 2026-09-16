@@ -9,9 +9,9 @@ prefixes:
   gsp: http://www.opengis.net/ont/geosparql#
   schema: http://schema.org/
   edintmed: https://edint.es/def/medio-ambiente#
-  edintkos-vars: https://edint.es/kos/edint/variables/
-  edintkos-foi: https://edint.es/kos/edint/foi/
-  edintkos-sensortypes: https://edint.es/kos/edint/sensortypes/
+  edintkos-vars: https://edint.es/kos/EnvironmentalProperty/
+  edintkos-foi: https://edint.es/kos/FeaturesOfInterest/
+  edintkos-sensortypes: https://edint.es/kos/SensorTypes/
 sources:
   data-source: ['climatologia_normalizado.csv~csv']
 

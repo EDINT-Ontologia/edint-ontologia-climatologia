@@ -9,9 +9,9 @@ prefixes:
   gsp: http://www.opengis.net/ont/geosparql#
   schema: http://schema.org/
   edintmed: https://edint.es/def/medio-ambiente#
-  edintkos-vars: http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/
-  edintkos-foi: http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/
-  edintkos-sensortypes: http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/
+  edintkos-vars: https://edint.es/kos/EnvironmentalProperty/
+  edintkos-foi: https://edint.es/kos/FeaturesOfInterest/
+  edintkos-sensortypes: https://edint.es/kos/SensorTypes/
 sources:
   data-source: ['meteo_aplanado_enriquecido.csv~csv']
 
