@@ -1,5 +1,7 @@
 # Ontología EDINT de Sensores Medioambientales, caso Climatología (EDINT Environmental Sensors Ontology)
 
+[![Licencia](https://img.shields.io/badge/licencia-CC%20BY--SA%204.0-lightgrey)](LICENSE)
+
 Este repositorio contiene ejemplos de uso concretos de la ontología de Sensores Medioambientales para el caso de magnitudes climatológicas.
 
 Ver también: [Ontología EDINT de Sensores Medioambientales](https://github.com/oeg-upm/edint-ontologia-medio-ambiente)
