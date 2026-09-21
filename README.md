@@ -12,8 +12,12 @@ Ver también: [Ontología EDINT de Sensores Medioambientales](https://github.com
 |--------|--------------|
 | **examples/** | Incluye ejemplos que demuestran cómo instanciar o aplicar la ontología en escenarios de datos reales. |
 | **mappings/** | Incluye mappings RML que ejemplifican la transformación de orígenes de datos en datos enlazados. |
-| **shapes/** | Contiene los SHACL utilizadas para definir y validar las restricciones de la ontología.  |
+| **diagrams/** | Contiene el diagrama con instancias relacionadas a los conceptos de la Ontología de Sensores Medioambientales.  |
 
+# Diagrama con ejemplo de Calidad del Aire (Diagram with an Air Quality Example)
+## Ejemplo de utilización de la Ontología de Sensores Medioambientales para Calidad del Aire 
+
+![Diagrana con ejemplo Climatología](diagrams/diagram.png)
 
 ## Mantenimiento y evolución (Maintenance and evolution)
 
