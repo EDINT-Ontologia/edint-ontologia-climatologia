@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://edint.es/def/climatologia#"
+     xml:base="https://edint.es/def/climatologia#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:schema="https://schema.org/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+    <owl:Ontology rdf:about="https://edint.es/def/climatologia#">
+        <owl:versionIRI rdf:resource="https://edint.es/def/climatologia/0.1.0"/>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Daniel Doña</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Edna Ruckhaus</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Lucía Sánchez</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Maria del Socorro Bernardos</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Oscar Corcho</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:description xml:lang="es">Ontología para la representación de datos climatológicos. Ejemplos de uso concretos de la ontología de Sensores Medioambientales para magnitudes climatológicas.</dcterms:description>
+        <dcterms:description xml:lang="en">Ontology for representing climatological data. Concrete examples of use of the Environmental Sensors ontology for climatological magnitudes.</dcterms:description>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
+        <dcterms:title xml:lang="es">Ontología EDINT de Sensores Medioambientales, caso Climatología</dcterms:title>
+        <dcterms:title xml:lang="en">EDINT Environmental Sensors Ontology, Climatology Case</dcterms:title>
+        <rdfs:label xml:lang="es">Climatología</rdfs:label>
+        <rdfs:label xml:lang="en">Climatology</rdfs:label>
+        <vann:preferredNamespacePrefix>edintmed</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="https://edint.es/def/climatologia#"/>
+        <owl:versionInfo>0.1.0</owl:versionInfo>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-23</dcterms:created>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-23</dcterms:issued>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-23</dcterms:modified>
+        <schema:codeRepository rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-climatologia"/>
+        <schema:funding>Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)</schema:funding>
+        <dcterms:publisher rdf:parseType="Resource">
+            <foaf:name>FEMP</foaf:name>
+            <foaf:homepage rdf:resource="https://www.femp.es/"/>
+            <schema:affiliation>Federación Española de Municipios y Provincias</schema:affiliation>
+        </dcterms:publisher>
+        <dcterms:bibliographicCitation xml:lang="es">Ontología EDINT de Sensores Medioambientales, caso Climatología. EDINT. Revisión: v0.1.0.</dcterms:bibliographicCitation>
+        <dcterms:bibliographicCitation xml:lang="en">EDINT Environmental Sensors Ontology, Climatology Case. EDINT. Revision: v0.1.0.</dcterms:bibliographicCitation>
+        <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
+        <dcterms:abstract xml:lang="es">Ontología para la representación de datos climatológicos. Ejemplos de uso concretos de la ontología de Sensores Medioambientales para magnitudes climatológicas.</dcterms:abstract>
+        <dcterms:abstract xml:lang="en">Ontology for representing climatological data. Concrete examples of use of the Environmental Sensors ontology for climatological magnitudes.</dcterms:abstract>
+    </owl:Ontology>
+    <foaf:Organization rdf:about="https://oeg.fi.upm.es/">
+        <foaf:name>Ontology Engineering Group, UPM</foaf:name>
+    </foaf:Organization>
+</rdf:RDF>
