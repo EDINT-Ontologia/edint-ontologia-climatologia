@@ -1,0 +1,148 @@
+@prefix : <https://edint.es/def/climatologia#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://edint.es/def/climatologia#> .
+
+<https://edint.es/def/climatologia#> rdf:type owl:Ontology ;
+                                      owl:versionIRI <https://edint.es/def/climatologia/0.1.0> ;
+                                      <http://purl.org/dc/terms/abstract> "Ontology for representing climatological data. Concrete examples of use of the Environmental Sensors ontology for climatological magnitudes."@en ,
+                                                                          "Ontología para la representación de datos climatológicos. Ejemplos de uso concretos de la ontología de Sensores Medioambientales para magnitudes climatológicas."@es ;
+                                      <http://purl.org/dc/terms/bibliographicCitation> "EDINT Environmental Sensors Ontology, Climatology Case. EDINT. Revision: v0.1.0."@en ,
+                                                                                       "Ontología EDINT de Sensores Medioambientales, caso Climatología. EDINT. Revisión: v0.1.0."@es ;
+                                      <http://purl.org/dc/terms/created> "2026-09-23"^^xsd:date ;
+                                      <http://purl.org/dc/terms/creator> _:genid1 ,
+                                                                         _:genid2 ,
+                                                                         _:genid3 ,
+                                                                         _:genid4 ,
+                                                                         _:genid5 ;
+                                      <http://purl.org/dc/terms/description> "Ontology for representing climatological data. Concrete examples of use of the Environmental Sensors ontology for climatological magnitudes."@en ,
+                                                                             "Ontología para la representación de datos climatológicos. Ejemplos de uso concretos de la ontología de Sensores Medioambientales para magnitudes climatológicas."@es ;
+                                      <http://purl.org/dc/terms/issued> "2026-09-23"^^xsd:date ;
+                                      <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by-sa/4.0/> ;
+                                      <http://purl.org/dc/terms/modified> "2026-09-23"^^xsd:date ;
+                                      <http://purl.org/dc/terms/publisher> _:genid6 ;
+                                      <http://purl.org/dc/terms/title> "EDINT Environmental Sensors Ontology, Climatology Case"@en ,
+                                                                       "Ontología EDINT de Sensores Medioambientales, caso Climatología"@es ;
+                                      <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintmed" ;
+                                      <http://purl.org/vocab/vann/preferredNamespaceUri> <https://edint.es/def/climatologia#> ;
+                                      rdfs:label "Climatology"@en ,
+                                                 "Climatología"@es ;
+                                      owl:versionInfo "0.1.0" ;
+                                      <https://schema.org/codeRepository> <https://github.com/EDINT-Ontologia/edint-ontologia-climatologia> ;
+                                      <https://schema.org/creativeWorkStatus> "Ontology Specification"@en ;
+                                      <https://schema.org/funding> "Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)" .
+
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Daniel Doña" ;
+          <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
+
+_:genid2 <http://xmlns.com/foaf/0.1/name> "Edna Ruckhaus" ;
+          <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
+
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Lucía Sánchez" ;
+          <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
+
+_:genid4 <http://xmlns.com/foaf/0.1/name> "Maria del Socorro Bernardos" ;
+          <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
+
+_:genid5 <http://xmlns.com/foaf/0.1/name> "Oscar Corcho" ;
+          <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
+
+_:genid6 <http://xmlns.com/foaf/0.1/homepage> <https://www.femp.es/> ;
+          <http://xmlns.com/foaf/0.1/name> "FEMP" ;
+          <https://schema.org/affiliation> "Federación Española de Municipios y Provincias" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+<http://xmlns.com/foaf/0.1/homepage> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/affiliation
+<https://schema.org/affiliation> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/codeRepository
+<https://schema.org/codeRepository> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/creativeWorkStatus
+<https://schema.org/creativeWorkStatus> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/funding
+<https://schema.org/funding> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<https://oeg.fi.upm.es/> <http://xmlns.com/foaf/0.1/name> "Ontology Engineering Group, UPM" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
