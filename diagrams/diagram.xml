@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
   <diagram name="Medio ambiente" id="YX50EUY3gUCsAtVor7Cb">
-    <mxGraphModel dx="3764" dy="1643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="3539" dy="1646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="9nYwCnnQ28_8oDObz2mp-0" />
         <mxCell id="9nYwCnnQ28_8oDObz2mp-1" parent="9nYwCnnQ28_8oDObz2mp-0" />
@@ -229,7 +229,7 @@
         <mxCell id="FXX04wTt2daNRe3fm8Yz-5" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;snapToPoint=1;points=[[0.1,0],[0.2,0],[0.3,0],[0.4,0],[0.5,0],[0.6,0],[0.7,0],[0.8,0],[0.9,0],[0,0.1],[0,0.3],[0,0.5],[0,0.7],[0,0.9],[0.1,1],[0.2,1],[0.3,1],[0.4,1],[0.5,1],[0.6,1],[0.7,1],[0.8,1],[0.9,1],[1,0.1],[1,0.3],[1,0.5],[1,0.7],[1,0.9]];" value="edintmed:EnvironmentalFeatureOfInterest&lt;div&gt;(CaracterísticadeInterés)&lt;/div&gt;" vertex="1">
           <mxGeometry height="38" width="240" x="-1674" y="-380" as="geometry" />
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-0" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&lt;u&gt;ex:estacionDeMedida/102&lt;/u&gt;" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-0" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;" value="&lt;u&gt;ex:estacionDeMedida/102&lt;/u&gt;" vertex="1">
           <mxGeometry height="30" width="151" x="-691" y="-299" as="geometry" />
         </mxCell>
         <mxCell id="TOwfiE34GnsCyhoXmsXs-1" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" source="TOwfiE34GnsCyhoXmsXs-0" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;dashed=1;entryX=0.46;entryY=1.075;entryDx=0;entryDy=0;entryPerimeter=0;" target="9nYwCnnQ28_8oDObz2mp-51" value="">
@@ -243,7 +243,7 @@
             <mxPoint x="20" y="-5" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-4" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&quot;Estacion meteorologica - J.M.D. Moratalaz&quot;@es" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-4" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d6b656;fillColor=#fff2cc;" value="&quot;Estacion meteorologica - J.M.D. Moratalaz&quot;@es" vertex="1">
           <mxGeometry height="30" width="221.75" x="-670" y="-190" as="geometry" />
         </mxCell>
         <mxCell id="TOwfiE34GnsCyhoXmsXs-5" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" source="TOwfiE34GnsCyhoXmsXs-0" style="endArrow=classic;html=1;rounded=0;exitX=0.884;exitY=1.033;exitDx=0;exitDy=0;exitPerimeter=0;" target="TOwfiE34GnsCyhoXmsXs-4" value="">
@@ -257,8 +257,8 @@
             <mxPoint x="6" y="-9" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-7" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&quot;102&quot;" vertex="1">
-          <mxGeometry height="30" width="80" x="-662" y="-229" as="geometry" />
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-7" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d6b656;fillColor=#fff2cc;" value="&quot;102&quot;" vertex="1">
+          <mxGeometry height="28" width="80" x="-662" y="-228" as="geometry" />
         </mxCell>
         <mxCell id="TOwfiE34GnsCyhoXmsXs-8" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" source="TOwfiE34GnsCyhoXmsXs-0" style="endArrow=classic;html=1;rounded=0;entryX=0.638;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryPerimeter=0;" target="TOwfiE34GnsCyhoXmsXs-7" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -271,7 +271,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-10" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&lt;u&gt;ex:MET_102_81&lt;/u&gt;" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-10" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;" value="&lt;u&gt;ex:MET_102_81&lt;/u&gt;" vertex="1">
           <mxGeometry height="30" width="138" x="-1000" y="-280" as="geometry" />
         </mxCell>
         <mxCell id="TOwfiE34GnsCyhoXmsXs-11" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" source="TOwfiE34GnsCyhoXmsXs-10" style="endArrow=classic;html=1;rounded=0;exitX=0.457;exitY=-0.033;exitDx=0;exitDy=0;dashed=1;entryX=0.46;entryY=1.075;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" value="">
@@ -285,7 +285,7 @@
             <mxPoint x="12" y="18" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-17" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&quot;Sensor de velocidad del viento&quot;@es" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-17" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d6b656;fillColor=#fff2cc;" value="&quot;Sensor de velocidad del viento&quot;@es" vertex="1">
           <mxGeometry height="30" width="221.75" x="-929" y="-212" as="geometry" />
         </mxCell>
         <mxCell id="TOwfiE34GnsCyhoXmsXs-18" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" style="endArrow=classic;html=1;rounded=0;exitX=0.884;exitY=1.033;exitDx=0;exitDy=0;exitPerimeter=0;" target="TOwfiE34GnsCyhoXmsXs-17" value="">
@@ -299,7 +299,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-20" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&quot;MET_102_81&quot;" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-20" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d6b656;fillColor=#fff2cc;" value="&quot;MET_102_81&quot;" vertex="1">
           <mxGeometry height="30" width="90" x="-1040" y="-200" as="geometry" />
         </mxCell>
         <mxCell id="TOwfiE34GnsCyhoXmsXs-21" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" source="TOwfiE34GnsCyhoXmsXs-10" style="endArrow=classic;html=1;rounded=0;entryX=0.638;entryY=0;entryDx=0;entryDy=0;exitX=0.145;exitY=1;exitDx=0;exitDy=0;entryPerimeter=0;exitPerimeter=0;" target="TOwfiE34GnsCyhoXmsXs-20" value="">
@@ -324,7 +324,7 @@
             <mxPoint y="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-25" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&lt;u&gt;ex:Vaisala&lt;/u&gt;" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-25" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;" value="&lt;u&gt;ex:Vaisala&lt;/u&gt;" vertex="1">
           <mxGeometry height="30" width="138" x="-1301" y="-140" as="geometry" />
         </mxCell>
         <mxCell id="TOwfiE34GnsCyhoXmsXs-26" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" source="TOwfiE34GnsCyhoXmsXs-25" style="endArrow=classic;html=1;rounded=0;exitX=0.457;exitY=-0.033;exitDx=0;exitDy=0;dashed=1;entryX=0.46;entryY=1.075;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" value="">
@@ -352,7 +352,7 @@
         <mxCell id="TOwfiE34GnsCyhoXmsXs-37" parent="9nYwCnnQ28_8oDObz2mp-1" style="verticalAlign=middle;align=center;vsdxID=334;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;skos:Concept&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;skos:inScheme edintkos:SensorTypes&amp;gt;&lt;/div&gt;&lt;div&gt;(TipoDeSensor)&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="280" x="-730" y="-140" as="geometry" />
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-38" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&lt;u&gt;edintkos-sensortypes:ClimaticSensor&lt;/u&gt;" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-38" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;" value="&lt;u&gt;edintkos-sensortypes:ClimaticSensor&lt;/u&gt;" vertex="1">
           <mxGeometry height="30" width="221.75" x="-1040" y="-110" as="geometry" />
         </mxCell>
         <mxCell id="TOwfiE34GnsCyhoXmsXs-39" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" style="endArrow=classic;html=1;rounded=0;exitX=0.457;exitY=-0.033;exitDx=0;exitDy=0;dashed=1;entryX=-0.011;entryY=0.575;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" target="TOwfiE34GnsCyhoXmsXs-37" value="">
@@ -377,10 +377,10 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-43" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&lt;u&gt;ex:OBS_28079102_81_98_&lt;/u&gt;&lt;div&gt;&lt;u&gt;20260331_01&lt;/u&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-43" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;" value="&lt;u&gt;ex:OBS_28079102_81_98_&lt;/u&gt;&lt;div&gt;&lt;u&gt;20260331_01&lt;/u&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="158" x="-1350" y="-70" as="geometry" />
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-44" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&quot;28079102_81_98&quot;@es" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-44" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d6b656;fillColor=#fff2cc;" value="&quot;28079102_81_98&quot;@es" vertex="1">
           <mxGeometry height="30" width="171" x="-1180" y="30" as="geometry" />
         </mxCell>
         <mxCell id="TOwfiE34GnsCyhoXmsXs-45" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" source="TOwfiE34GnsCyhoXmsXs-43" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="TOwfiE34GnsCyhoXmsXs-44" value="">
@@ -394,7 +394,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-47" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&lt;u&gt;edintkos-vars:WindSpeed&lt;/u&gt;" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-47" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;" value="&lt;u&gt;edintkos-vars:WindSpeed&lt;/u&gt;" vertex="1">
           <mxGeometry height="30" width="208" x="-1042.75" y="-30" as="geometry" />
         </mxCell>
         <mxCell id="TOwfiE34GnsCyhoXmsXs-48" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" source="TOwfiE34GnsCyhoXmsXs-43" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" target="TOwfiE34GnsCyhoXmsXs-47" value="">
@@ -433,10 +433,10 @@
             <mxPoint x="-21" y="6" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-55" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&lt;u&gt;edintkos-Wind&lt;/u&gt;" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-55" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;" value="&lt;u&gt;edintkos-Wind&lt;/u&gt;" vertex="1">
           <mxGeometry height="30" width="141.75" x="-1570" y="-180" as="geometry" />
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-56" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fontStyle=4" value="ex:res_OBS_28079102_81_98_20260331_01" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-56" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fontStyle=4;fillColor=#d5e8d4;" value="ex:res_OBS_28079102_81_98_20260331_01" vertex="1">
           <mxGeometry height="30" width="255" x="-1790" y="-30" as="geometry" />
         </mxCell>
         <mxCell id="TOwfiE34GnsCyhoXmsXs-59" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" source="TOwfiE34GnsCyhoXmsXs-55" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;dashed=1;entryX=0.441;entryY=1.014;entryDx=0;entryDy=0;entryPerimeter=0;" target="FXX04wTt2daNRe3fm8Yz-2" value="">
@@ -483,7 +483,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TOwfiE34GnsCyhoXmsXs-68" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&lt;u&gt;unit:M-PER-SEC&lt;/u&gt;" vertex="1">
+        <mxCell id="TOwfiE34GnsCyhoXmsXs-68" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;" value="&lt;u&gt;unit:M-PER-SEC&lt;/u&gt;" vertex="1">
           <mxGeometry height="30" width="135" x="-1680" y="-130" as="geometry" />
         </mxCell>
         <mxCell id="TOwfiE34GnsCyhoXmsXs-69" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" source="TOwfiE34GnsCyhoXmsXs-56" style="endArrow=classic;html=1;rounded=0;exitX=0.718;exitY=-0.067;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
@@ -522,7 +522,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Iyd5OPx-k4W0vQUVUVtU-0" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&quot;Medicion de WindSpeed en 2026-03-31T01:00:00Z&quot;@es" vertex="1">
+        <mxCell id="Iyd5OPx-k4W0vQUVUVtU-0" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d6b656;fillColor=#fff2cc;" value="&quot;Medicion de WindSpeed en 2026-03-31T01:00:00Z&quot;@es" vertex="1">
           <mxGeometry height="30" width="171" x="-1434" y="30" as="geometry" />
         </mxCell>
         <mxCell id="Iyd5OPx-k4W0vQUVUVtU-1" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" style="endArrow=classic;html=1;rounded=0;entryX=0.45;entryY=-0.067;entryDx=0;entryDy=0;entryPerimeter=0;" target="Iyd5OPx-k4W0vQUVUVtU-0" value="">
@@ -561,13 +561,13 @@
             <mxPoint x="14" y="5" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Iyd5OPx-k4W0vQUVUVtU-10" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" value="&quot;2.6&quot;^^xsd:decimal" vertex="1">
+        <mxCell id="Iyd5OPx-k4W0vQUVUVtU-10" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d6b656;fillColor=#fff2cc;" value="&quot;2.6&quot;^^xsd:decimal" vertex="1">
           <mxGeometry height="30" width="124" x="-1970" y="-80" as="geometry" />
         </mxCell>
         <mxCell id="3VmiIHQb5cVC2bVs1tjG-0" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;pre style=&quot;text-align: left;&quot;&gt;&amp;lt;http://vocab.linkeddata.es/datosabiertos/recurso/estacionDeMedida/102&amp;gt; a edintmed:SensorPlatform;&lt;br&gt;  dct:identifier &quot;102&quot;;&lt;br&gt;  rdfs:label &quot;Estacion meteorologica - J.M.D. Moratalaz&quot;;&lt;br&gt;  sosa:hosts &amp;lt;http://vocab.linkeddata.es/datosabiertos/recurso/sensor/MET_102_81&amp;gt; .&lt;/pre&gt;&lt;pre style=&quot;text-align: left;&quot;&gt;&amp;lt;http://vocab.linkeddata.es/datosabiertos/recurso/sensor/MET_102_81&amp;gt; a edintmed:EnvironmentalSensor;&lt;br&gt;  dct:identifier &quot;MET_102_81&quot;;&lt;br&gt;  schema:manufacturer &amp;lt;http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/Vaisala&amp;gt;;&lt;br&gt;  edintmed:hasSensorType edintkos-sensortypes:ClimaticSensor;&lt;br&gt;  rdfs:label &quot;Sensor de velocidad del viento&quot;;&lt;br&gt;  sosa:isHostedBy &amp;lt;http://vocab.linkeddata.es/datosabiertos/recurso/estacionDeMedida/102&amp;gt;.&lt;/pre&gt;&lt;pre style=&quot;text-align: left;&quot;&gt;&amp;lt;http://vocab.linkeddata.es/datosabiertos/recurso/observacion/OBS_28079102_81_98_20260331_01&amp;gt;&lt;br&gt;  a edintmed:EnvironmentalObservation;&lt;br&gt;  dct:identifier &quot;28079102_81_98&quot;;&lt;br&gt;  rdfs:label &quot;Medicion de WindSpeed en 2026-03-31T01:00:00Z&quot;;&lt;br&gt;  sosa:hasFeatureOfInterest edintkos-foi:Wind;&lt;br&gt;  sosa:hasResult &amp;lt;http://vocab.linkeddata.es/datosabiertos/recurso/resultadoObservacion/OBS_28079102_81_98_20260331_01&amp;gt;;&lt;br&gt;  sosa:madeBySensor &amp;lt;http://vocab.linkeddata.es/datosabiertos/recurso/sensor/MET_102_81&amp;gt;;&lt;br&gt;&lt;p style=&quot;text-align: left;&quot;&gt;  sosa:observedProperty edintkos-vars:WindSpeed&amp;lt;;&lt;br&gt;  sosa:resultTime &quot;2026-03-31T01:00:00Z&quot;^^xsd:dateTime .&lt;br&gt;  &lt;/p&gt;&lt;/pre&gt;" vertex="1">
           <mxGeometry height="340" width="892" x="-1674" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="3VmiIHQb5cVC2bVs1tjG-1" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fontStyle=0" value="&quot;2026-03-31T01:00:00Z&quot;^^xsd:dateTime" vertex="1">
+        <mxCell id="3VmiIHQb5cVC2bVs1tjG-1" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d6b656;fontStyle=0;fillColor=#fff2cc;" value="&quot;2026-03-31T01:00:00Z&quot;^^xsd:dateTime" vertex="1">
           <mxGeometry height="30" width="255" x="-1753" y="20" as="geometry" />
         </mxCell>
         <mxCell id="3VmiIHQb5cVC2bVs1tjG-2" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" source="TOwfiE34GnsCyhoXmsXs-43" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.07;exitY=1.033;exitDx=0;exitDy=0;exitPerimeter=0;" target="3VmiIHQb5cVC2bVs1tjG-1" value="">
