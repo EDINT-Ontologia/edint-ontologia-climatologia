@@ -19,106 +19,106 @@
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/estacionDeMedida/102> a edintmed:SensorPlatform;
+<https://example.org/recurso/estacionDeMedida/102> a edintmed:SensorPlatform;
   dct:identifier "102";
-  gsp:hasGeometry <http://vocab.linkeddata.es/datosabiertos/recurso/geometria/102>;
+  gsp:hasGeometry <https://example.org/recurso/geometria/102>;
   rdfs:label "Estacion meteorologica - J.M.D. Moratalaz";
-  sosa:hosts <http://vocab.linkeddata.es/datosabiertos/recurso/sensor/MET_102_81>, <http://vocab.linkeddata.es/datosabiertos/recurso/sensor/MET_102_83>,
-    <http://vocab.linkeddata.es/datosabiertos/recurso/sensor/MET_102_87> .
+  sosa:hosts <https://example.org/recurso/sensor/MET_102_81>, <https://example.org/recurso/sensor/MET_102_83>,
+    <https://example.org/recurso/sensor/MET_102_87> .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/eventoFenomeno/OBS_28079102_81_98_20260331_01>
+<https://example.org/recurso/eventoFenomeno/OBS_28079102_81_98_20260331_01>
   a time:Instant;
   time:inXSDDateTime "2026-03-31T01:00:00Z"^^xsd:dateTime .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/eventoFenomeno/OBS_28079102_83_98_20260331_01>
+<https://example.org/recurso/eventoFenomeno/OBS_28079102_83_98_20260331_01>
   a time:Instant;
   time:inXSDDateTime "2026-03-31T01:00:00Z"^^xsd:dateTime .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/eventoFenomeno/OBS_28079102_87_98_20260331_01>
+<https://example.org/recurso/eventoFenomeno/OBS_28079102_87_98_20260331_01>
   a time:Instant;
   time:inXSDDateTime "2026-03-31T01:00:00Z"^^xsd:dateTime .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/geometria/102> a gsp:Geometry;
+<https://example.org/recurso/geometria/102> a gsp:Geometry;
   gsp:asWKT "POINT(-3.6453 40.4055)"^^gsp:wktLiteral .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/observacion/OBS_28079102_81_98_20260331_01>
+<https://example.org/recurso/observacion/OBS_28079102_81_98_20260331_01>
   a edintmed:EnvironmentalObservation;
   dct:identifier "28079102_81_98";
   rdfs:label "Medicion de WindSpeed en 2026-03-31T01:00:00Z";
   sosa:hasFeatureOfInterest edintkos-foi:Wind;
-  sosa:hasResult <http://vocab.linkeddata.es/datosabiertos/recurso/resultadoObservacion/OBS_28079102_81_98_20260331_01>;
-  sosa:madeBySensor <http://vocab.linkeddata.es/datosabiertos/recurso/sensor/MET_102_81>;
+  sosa:hasResult <https://example.org/recurso/resultadoObservacion/OBS_28079102_81_98_20260331_01>;
+  sosa:madeBySensor <https://example.org/recurso/sensor/MET_102_81>;
   sosa:observedProperty edintkos-vars:WindSpeed;
-  sosa:phenomenonTime <http://vocab.linkeddata.es/datosabiertos/recurso/eventoFenomeno/OBS_28079102_81_98_20260331_01>;
+  sosa:phenomenonTime <https://example.org/recurso/eventoFenomeno/OBS_28079102_81_98_20260331_01>;
   sosa:resultTime "2026-03-31T01:00:00Z"^^xsd:dateTime .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/observacion/OBS_28079102_83_98_20260331_01>
+<https://example.org/recurso/observacion/OBS_28079102_83_98_20260331_01>
   a edintmed:EnvironmentalObservation;
   dct:identifier "28079102_83_98";
   rdfs:label "Medicion de AirTemperature en 2026-03-31T01:00:00Z";
   sosa:hasFeatureOfInterest edintkos-foi:Air;
-  sosa:hasResult <http://vocab.linkeddata.es/datosabiertos/recurso/resultadoObservacion/OBS_28079102_83_98_20260331_01>;
-  sosa:madeBySensor <http://vocab.linkeddata.es/datosabiertos/recurso/sensor/MET_102_83>;
+  sosa:hasResult <https://example.org/recurso/resultadoObservacion/OBS_28079102_83_98_20260331_01>;
+  sosa:madeBySensor <https://example.org/recurso/sensor/MET_102_83>;
   sosa:observedProperty edintkos-vars:AirTemperature;
-  sosa:phenomenonTime <http://vocab.linkeddata.es/datosabiertos/recurso/eventoFenomeno/OBS_28079102_83_98_20260331_01>;
+  sosa:phenomenonTime <https://example.org/recurso/eventoFenomeno/OBS_28079102_83_98_20260331_01>;
   sosa:resultTime "2026-03-31T01:00:00Z"^^xsd:dateTime .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/observacion/OBS_28079102_87_98_20260331_01>
+<https://example.org/recurso/observacion/OBS_28079102_87_98_20260331_01>
   a edintmed:EnvironmentalObservation;
   dct:identifier "28079102_87_98";
   rdfs:label "Medicion de AtmosphericPressure en 2026-03-31T01:00:00Z";
   sosa:hasFeatureOfInterest edintkos-foi:Air;
-  sosa:hasResult <http://vocab.linkeddata.es/datosabiertos/recurso/resultadoObservacion/OBS_28079102_87_98_20260331_01>;
-  sosa:madeBySensor <http://vocab.linkeddata.es/datosabiertos/recurso/sensor/MET_102_87>;
+  sosa:hasResult <https://example.org/recurso/resultadoObservacion/OBS_28079102_87_98_20260331_01>;
+  sosa:madeBySensor <https://example.org/recurso/sensor/MET_102_87>;
   sosa:observedProperty edintkos-vars:AtmosphericPressure;
-  sosa:phenomenonTime <http://vocab.linkeddata.es/datosabiertos/recurso/eventoFenomeno/OBS_28079102_87_98_20260331_01>;
+  sosa:phenomenonTime <https://example.org/recurso/eventoFenomeno/OBS_28079102_87_98_20260331_01>;
   sosa:resultTime "2026-03-31T01:00:00Z"^^xsd:dateTime .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/DavisInstruments> a
+<https://example.org/recurso/organizacion/DavisInstruments> a
     schema:Organization;
   rdfs:label "DavisInstruments" .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/MeteoCorp> a schema:Organization;
+<https://example.org/recurso/organizacion/MeteoCorp> a schema:Organization;
   rdfs:label "MeteoCorp" .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/Vaisala> a schema:Organization;
+<https://example.org/recurso/organizacion/Vaisala> a schema:Organization;
   rdfs:label "Vaisala" .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/resultadoObservacion/OBS_28079102_81_98_20260331_01>
+<https://example.org/recurso/resultadoObservacion/OBS_28079102_81_98_20260331_01>
   a qudt:QuantityValue;
   qudt:numericValue 2.6;
   qudt:unit unit:M-PER-SEC .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/resultadoObservacion/OBS_28079102_83_98_20260331_01>
+<https://example.org/recurso/resultadoObservacion/OBS_28079102_83_98_20260331_01>
   a qudt:QuantityValue;
   qudt:numericValue 8.1;
   qudt:unit unit:DEG_C .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/resultadoObservacion/OBS_28079102_87_98_20260331_01>
+<https://example.org/recurso/resultadoObservacion/OBS_28079102_87_98_20260331_01>
   a qudt:QuantityValue;
   qudt:numericValue 946.0;
   qudt:unit unit:MilliBAR .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/sensor/MET_102_81> a edintmed:EnvironmentalSensor;
+<https://example.org/recurso/sensor/MET_102_81> a edintmed:EnvironmentalSensor;
   dct:identifier "MET_102_81";
-  schema:manufacturer <http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/Vaisala>;
+  schema:manufacturer <https://example.org/recurso/organizacion/Vaisala>;
   edintmed:hasSensorType edintkos-sensortypes:ClimaticSensor;
   rdfs:label "Sensor de velocidad del viento";
-  sosa:isHostedBy <http://vocab.linkeddata.es/datosabiertos/recurso/estacionDeMedida/102>;
+  sosa:isHostedBy <https://example.org/recurso/estacionDeMedida/102>;
   sosa:observes edintkos-vars:WindSpeed .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/sensor/MET_102_83> a edintmed:EnvironmentalSensor;
+<https://example.org/recurso/sensor/MET_102_83> a edintmed:EnvironmentalSensor;
   dct:identifier "MET_102_83";
-  schema:manufacturer <http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/DavisInstruments>;
+  schema:manufacturer <https://example.org/recurso/organizacion/DavisInstruments>;
   edintmed:hasSensorType edintkos-sensortypes:ClimaticSensor;
   rdfs:label "Sensor de temperatura";
-  sosa:isHostedBy <http://vocab.linkeddata.es/datosabiertos/recurso/estacionDeMedida/102>;
+  sosa:isHostedBy <https://example.org/recurso/estacionDeMedida/102>;
   sosa:observes edintkos-vars:AirTemperature .
 
-<http://vocab.linkeddata.es/datosabiertos/recurso/sensor/MET_102_87> a edintmed:EnvironmentalSensor;
+<https://example.org/recurso/sensor/MET_102_87> a edintmed:EnvironmentalSensor;
   dct:identifier "MET_102_87";
-  schema:manufacturer <http://vocab.linkeddata.es/datosabiertos/recurso/organizacion/MeteoCorp>;
+  schema:manufacturer <https://example.org/recurso/organizacion/MeteoCorp>;
   edintmed:hasSensorType edintkos-sensortypes:ClimaticSensor;
   rdfs:label "Sensor de presión barométrica";
-  sosa:isHostedBy <http://vocab.linkeddata.es/datosabiertos/recurso/estacionDeMedida/102>;
+  sosa:isHostedBy <https://example.org/recurso/estacionDeMedida/102>;
   sosa:observes edintkos-vars:AtmosphericPressure .
