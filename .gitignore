@@ -1,3 +1,6 @@
 
+# macOS
+.DS_Store
+
 # Placeholder local de la ontología: no se versiona de momento
 documentation/ontology.owl
